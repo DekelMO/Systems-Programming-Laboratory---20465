@@ -1,0 +1,59 @@
+Welcome to the Set Manipulation Program!
+
+To use this program for reading or printing a set, enter the following format:
+"Command Name" "Set Name", "Set"
+Example: read_set SETA, 1, 2, 3, -1
+
+To use a set operation command, enter the following format:
+"Command Name" "FIRST_SET", "SECOND_SET", "THIRD_SET"
+Example: union_set SETA, SETB, SETC
+
+Valid Command Names:
+"read_set"    "print_set"   "union_set"
+"intersect_set"    "sub_set"   "symdiff_set"
+"stop"
+
+Valid Set Names:
+"SETA"    "SETB"    "SETC"
+"SETD"    "SETE"    "SETF"
+
+Guidelines:
+- Set values must be in the range [0, 127].
+- Separate each element of the set with a comma.
+- Separate the command from the first set input with spaces or tabs.
+- When using "read_set", end the set with "-1" to indicate the end of input.
+
+To exit the program, enter:
+"stop"
+
+Whenever you see ">>>>" on the screen, the program is ready for the next action.
+Let's begin!
+
+>>>>>read_set SETA,1,2,-1
+>>>>>print_set SETA
+1 2 
+>>>>>read_set SETB,3,4,-1
+>>>>>print_set SETB
+3 4 
+>>>>>union_set SETA,SETB,SETC
+>>>>>print_set SETC
+1 2 3 4 
+>>>>>read_set SETD,17,18,19,-1
+>>>>>print_set SETD
+17 18 19 
+>>>>>read_set SETE,18,19,20,21,-1
+>>>>>print_set SETE
+18 19 20 21 
+>>>>>intersect_set SETD,SETE,SETF
+>>>>>print_set SETF
+18 19 
+>>>>>read_set SETA,7,8,9,-1
+>>>>>print_set SETA
+7 8 9 
+>>>>>read_set SETB,8,-1
+>>>>>print_set SETB
+8 
+>>>>>sub_set SETA,SETB,SETC
+>>>>>print_set SETC
+7 9 
+>>>>>stop

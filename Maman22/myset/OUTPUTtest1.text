@@ -1,0 +1,94 @@
+Welcome to the Set Manipulation Program!
+
+To use this program for reading or printing a set, enter the following format:
+"Command Name" "Set Name", "Set"
+Example: read_set SETA, 1, 2, 3, -1
+
+To use a set operation command, enter the following format:
+"Command Name" "FIRST_SET", "SECOND_SET", "THIRD_SET"
+Example: union_set SETA, SETB, SETC
+
+Valid Command Names:
+"read_set"    "print_set"   "union_set"
+"intersect_set"    "sub_set"   "symdiff_set"
+"stop"
+
+Valid Set Names:
+"SETA"    "SETB"    "SETC"
+"SETD"    "SETE"    "SETF"
+
+Guidelines:
+- Set values must be in the range [0, 127].
+- Separate each element of the set with a comma.
+- Separate the command from the first set input with spaces or tabs.
+- When using "read_set", end the set with "-1" to indicate the end of input.
+
+To exit the program, enter:
+"stop"
+
+Whenever you see ">>>>" on the screen, the program is ready for the next action.
+Let's begin!
+
+>>>>>  ,	 read_set  	 	SETA, 13   ,   15,   13,  -1       
+ERROR: Illegal comma
+>>>>> 	 	 	read,set 	 	 SETA,12,-1
+ERROR: Undefined command name
+>>>>>read_set 	 	,  	 	SETA, 13, 15 ,13,14 ,   	-1
+ERROR: Undefined set name.
+>>>>>read_set, SETA,12,-1
+ERROR: Illegal comma
+>>>>>read_set ,SETA,12,-1
+ERROR: Undefined set name.
+>>>>>read_set SETG,12,13,-1
+ERROR: Undefined set name.
+>>>>>read_set SETA,  	 	,12,13,-1
+ERROR: Multiple consecutive commas
+>>>>>read_set SETA , 12, ,13, -1
+ERROR: Multiple consecutive commas
+>>>>>read_set SETA, 12, -1,
+ERROR: List of set members is not terminated correctly
+>>>>>read_set SETA, 12,13
+ERROR: List of set members is not terminated correctly
+>>>>>read_set SETA, 12,13.0,14,-1
+ERROR: Invalid set member - not an integer
+>>>>>read_set SETA ,12 ,13, xyz, -1
+ERROR: Invalid set member - not an integer
+>>>>>read_set SETA 13, -1
+ERROR: Missing comma
+>>>>>read_set SETA, 14,13 15,-1
+ERROR: Invalid set member - value out of range
+>>>>>read_set SETA, 14, -2, 37,-1
+ERROR: Invalid set member - value out of range
+>>>>>read_set SETA, 14, 128, 0, -1
+ERROR: Invalid set member - value out of range
+>>>>>read_set SETA, 45, 23, 6, 7, 4, 3, 75 ,45, 34,
+ERROR: List of set members is not terminated correctly
+>>>>>read_set SETB, 5, 4, 3, 2, 78, 45, 43, -1,2
+ERROR: List of set members is not terminated correctly
+>>>>>read_set SETC,100,105,101,103 104,-1
+ERROR: Invalid set member - value out of range
+>>>>>read_set SETX,100,105,101,103 104,-1
+ERROR: Undefined set name.
+>>>>>read_set SETB, 5, 4, -3, 2, 78, 45, 43, -1,2
+ERROR: List of set members is not terminated correctly
+>>>>>read_set SETE, 5, 4, 3, 2, 78, 45, 4.3, -1,2
+ERROR: List of set members is not terminated correctly
+>>>>>print_set SETA ,
+ERROR: Extraneous text after end of command
+>>>>>print_set ,SETB
+ERROR: Undefined set name.
+>>>>>print_set
+ERROR: Undefined set name.
+>>>>>union_set SETA SETB, SETD
+ERROR: Missing comma
+>>>>>intersect_set SETA, SETB SETE
+ERROR: Missing comma
+>>>>>sub_set SETA, SETB, , SETF
+ERROR: Multiple consecutive commas
+>>>>>intersect_set SETA, SETC,
+ERROR: Missing prameter.
+>>>>>intersect_set
+ERROR: Missing comma
+>>>>>do_set SETA, -1
+ERROR: Undefined command name
+>>>>>stop 23
